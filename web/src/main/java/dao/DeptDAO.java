@@ -96,20 +96,20 @@ public class DeptDAO {
 		}
 		return list;
 	}
-	
+
 	// insert
 	public void insertOne(DeptVO vo) {
 		// 4. SQL 문 작성
 		sb.setLength(0);
-		sb.append("INSERT INTO DEPT VALUES (?, ?, ?)");
-		
+		sb.append("INSERT INTO DEPT VALUES (DEPT_DEPTNO.NEXTVAL, ?, ?)");
+
 		// 5. 문장객체 생성
 		try {
 			pstmt = conn.prepareStatement(sb.toString());
-			pstmt.setInt(1, vo.getDeptno());
-			pstmt.setString(2, vo.getDname());
-			pstmt.setString(3, vo.getLoc());
-			
+//			pstmt.setInt(1, vo.getDeptno());
+			pstmt.setString(1, vo.getDname());
+			pstmt.setString(2, vo.getLoc());
+
 			// 6. 실행
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -117,33 +117,63 @@ public class DeptDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// Update
 	public void updateOne(DeptVO vo) {
 		// 4. SQL 문 작성
 		sb.setLength(0);
 		sb.append("UPDATE DEPT SET DNAME = ?, LOC = ? WHERE DEPTNO = ?");
-		
+
 		try {
 			// 5. 문장객체 생성
 			pstmt = conn.prepareStatement(sb.toString());
 			pstmt.setString(1, vo.getDname());
 			pstmt.setString(2, vo.getLoc());
 			pstmt.setInt(3, vo.getDeptno());
-			
+
 			// 6. 실행
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
+
 	// Delete
-	
-	
-	
-	
+	public void deletOne(int deptno) {
+		// 4. SQL 문 작성
+		sb.setLength(0);
+		sb.append("DELETE FROM DEPT WHERE DEPTNO = ? ");
+
+		try {
+			// 5. 문장객체 생성
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, deptno);
+			// 6. 실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	// 8. 자원반납
+	public void close() {
+		{
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
 }

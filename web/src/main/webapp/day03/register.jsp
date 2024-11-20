@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerday02.jsp</title>
+<title>registerday03.jsp</title>
 <style>
 h1 {
 	margin-left: 380px;
