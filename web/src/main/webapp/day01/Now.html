@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function test(){
+	location.href="now.do";
+}
+</script>
+</head>
+<body>
+<!-- 단순히 출력만 하는 것이므로 그냥 링크로만 처리해도 가능 -->
+	<a href="now.do">현재시간</a>
+	<!-- form 태그의 의의를 알아야함 정확히 일단 form 태그는 입력값을 받고 그걸 처리하는 경우에 주로 쓰인대 -->
+	<form action="now.do">
+		<input type="text" name="msg" id="" />
+		<input type="submit" name = "nowTime" value="현재시간"></input>
+	</form>
+	
+	<!-- 버튼 자체는 값을 전달하지 않으므로 따로 함수를 만들어서 javascript로 처리해줘야해 -->
+	<input type="button" value="현재시간3" onclick="test();" />
+</body>
+</html>

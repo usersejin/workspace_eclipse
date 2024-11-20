@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>web</display-name>
+
+	<!-- XML : eXtensible Markup Language -->
+	<!-- web.xml : 배포 기술자 => web Application 을 배포할 때 필요한 설정정보를 기술해 놓은 파일 -->
+
+	<!-- 서블릿 등록 servlet -> html보다 더 확장형 마크업 언어 -->
+	<!-- <servlet>
+	<servlet-name>myServlet</servlet-name>
+	<servlet-class>day02.myServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>myServlet</servlet-name>
+	<url-pattern>/myservlet.do</url-pattern>
+	</servlet-mapping> -->
+	
+	<!-- 이젠 이거 대신에 @WebServlet 사용한대 -->
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+</web-app>
