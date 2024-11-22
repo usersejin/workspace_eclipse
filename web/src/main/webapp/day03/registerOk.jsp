@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerOk.jsp</title>
+<title>registerOkday03.jsp</title>
 </head>
 <body>
 

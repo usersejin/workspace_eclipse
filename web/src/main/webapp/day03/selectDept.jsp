@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>dbtest.jsp</title>
+<title>dbtestday03.jsp</title>
 </head>
 <style>
 table, tr, td {

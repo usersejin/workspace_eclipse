@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 1000px;
+	margin: auto;
+	border: 3px solid rgb(255, 210, 0);
+}
+
+#nav {
+	padding-left: 100px;
+	border: 3px solid rgb(88, 167, 102);
+	margin: 0 30px;
+}
+
+a {
+	margin: 30px;
+}
+
+#leftContents {
+	width: 70%;
+	float: left;
+	background: lightyellow;
+}
+
+#sidebar {
+	width: 30%;
+	float: right;
+	background: rgb(199, 224, 180);
+}
+
+#login {
+	padding: 10px;
+	width: 100px;
+	text-align: center;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	width: 90%;
+}
+
+#footer {
+	/* float 효과를 없애기 위해서 사용 */ 
+	clear: both;
+	background: lightgray;
+}

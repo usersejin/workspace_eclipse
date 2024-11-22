@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>login.jsp</title>
+<title>loginday03.jsp</title>
 </head>
 <body>
 	<form action="loginOk.jsp" method="get">
