@@ -6,19 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loginday04.jsp</title>
+<title>loginday06.jsp</title>
 </head>
 <body>
-
-<%
-	// 로그인이 되어있는지 확인
-	Object obj = session.getAttribute("vo");
-
-	if (obj != null) { // 로그인이 되어있는 상태
-		MemberVO vo = (MemberVO) obj;
-/* 		out.println("<h3><a href = 'logout.jsp'>" + vo.getName() + "</a></h3>");*/		out.println("<h3><a href = 'logout.jsp'>로그아웃</a></h3>");
-	} else {
-	%>
 	<form action="loginOk.jsp" method="get">
 		<table>
 			<tr>
@@ -39,9 +29,5 @@
 			</tr>
 		</table>
 	</form>
-
-	<%
-	}
-	%>
 </body>
 </html>
