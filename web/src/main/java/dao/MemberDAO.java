@@ -87,7 +87,6 @@ public class MemberDAO {
 
 			// 6. 실행
 			rs = pstmt.executeQuery();
-			pstmt.setInt(1, vo.getMemno());
 
 			// 7. 로직 처리
 			while (rs.next()) {

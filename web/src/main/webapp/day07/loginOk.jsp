@@ -30,7 +30,7 @@
 		// session 내장객체 vo 저장
 		session.setAttribute("vo", vo);
 		out.println("<a href = 'login.jsp'>로그인 페이지로 이동</a>");
-		out.println("<a href = 'index.html'>인덱스로 이동</a>");
+		out.println("<a href = '../index.html'>인덱스로 이동</a>");
 	}
 	%>
 

@@ -8,7 +8,8 @@
 <title>write.jsp</title>
 </head>
 <body>
-	<form action="result.jsp" method="post" enctype="multipart/form-data">
+	<!-- upload2.do : 다중파일 전송 -->
+	<form action="/web/upload2.do" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<th>제목</th>
@@ -27,7 +28,8 @@
 			
 			<tr>
 				<th>첨부파일</th>
-				<td><input type="file" name="filename" id="" /></td>
+				<!-- multiple 파일 여러개 전송가능함 -->
+				<td><input type="file" name="filename" id="" multiple = "multiple"/></td>
 			</tr>
 			
 			<tr>

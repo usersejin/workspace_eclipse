@@ -13,30 +13,30 @@ import vo.ProductVO;
 public class ProductDAO {
 	
 	// 1. 환경변수
-		final static String driver = "oracle.jdbc.driver.OracleDriver";
-		final static String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		final static String user = "scott";
-		final static String password = "tiger";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		StringBuffer sb = new StringBuffer();
+	final static String driver = "oracle.jdbc.driver.OracleDriver";
+	final static String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	final static String user = "scott";
+	final static String password = "tiger";
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	StringBuffer sb = new StringBuffer();
 
-		public ProductDAO() {
-			try {
-				// 2. 클래스에 드라이브 로딩
-				Class.forName(driver);
-				// 3. connection
-				conn = DriverManager.getConnection(url, user, password);
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	public ProductDAO() {
+		try {
+			// 2. 클래스에 드라이브 로딩
+			Class.forName(driver);
+			// 3. connection
+			conn = DriverManager.getConnection(url, user, password);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
+	}
+	
 		// 전체 조회
 		public ArrayList<ProductVO> selectAll(){
 			ArrayList<ProductVO> list = new ArrayList<ProductVO>();
@@ -110,7 +110,7 @@ public class ProductDAO {
 		public void insertOne(ProductVO vo) {
 			// 4. SQL문 작성
 			sb.setLength(0);
-			sb.append("INSERT INTO PRODUCT (PNO, PNAME, PRICE, QTY, PRODESC, DCRATIO, IMGFILE, BIGFILE)  VALUES (PRODUCT_PNO_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)");
+			sb.append("INSERT INTO PRODUCT (PNO, PNAME, PRICE, QTY, PRODESC, DCRATIO, IMGFILE, BIGFILE)  VALUES (FILEUPLOADTEST_NO_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)");
 
 			try {
 				// 5. 문장 객체
