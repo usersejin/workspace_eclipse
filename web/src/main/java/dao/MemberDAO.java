@@ -107,6 +107,36 @@ public class MemberDAO {
 		return vo;
 	}
 
+	public MemberVO selectOneById(String id) {
+		
+		sb.setLength(0);
+		sb.append("SELECT MEMNO, NAME, ID, PW, REGDATE, GENDER, MOTIVE ");		
+		sb.append("FROM MEMBER  ");		
+		sb.append("WHERE ID = ?");		
+		
+		MemberVO vo = null;
+		try {
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int memno = rs.getInt("memno");
+				String name = rs.getString("name");
+				String pw = rs.getString("pw");
+				String regdate = rs.getString("regdate");
+				String gender = rs.getString("gender");
+				String motive = rs.getString("motive");
+				vo = new MemberVO(memno, name, id, pw, regdate, gender, motive);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return vo;
+	}
+	
 	// insert
 	public void insertOne(MemberVO vo) {
 		// 4. SQL문 작성

@@ -105,6 +105,39 @@ public class ProductDAO {
 
 			return vo;
 		}
+		
+		public ProductVO findByname(String pname) {
+			sb.setLength(0);
+			sb.append("SELECT PNO, PNAME, PRICE, QTY, PRODESC, DCRATIO, IMGFILE, BIGFILE ");
+			sb.append("FROM PRODUCT ");
+			sb.append("WHERE PNAME LIKE ?");
+			
+			ProductVO vo = null;
+
+			try {
+				pstmt = conn.prepareStatement(sb.toString());
+				pstmt.setString(1, "%" + pname + "%"); // 여기에 %를 붙이면 돼
+				
+				rs = pstmt.executeQuery();
+				
+				while (rs.next()) {
+					int pno = rs.getInt("pno");
+					int price = rs.getInt("price");
+					int qty = rs.getInt("qty");
+					String prodesc = rs.getString("prodesc");
+					int dcratio = rs.getInt("dcratio");
+					String imgfile = rs.getString("imgfile");
+					String bigfile = rs.getString("bigfile");
+					vo = new ProductVO(pno, pname, price, qty, prodesc, dcratio, imgfile, bigfile);
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return vo;
+			
+		}
 
 		// insert
 		public void insertOne(ProductVO vo) {
