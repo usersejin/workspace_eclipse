@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	dtd : 어떤 태그를 쓸 수 있는지에 대한 정의를 담고 있음
+	엘리먼트 (자식 엘리먼트)기호
+	+ : 1개 이상을 의미
+	PCDATA : Parsed Character DATA
+ -->
+<!ELEMENT department (dept)+ >
+<!ELEMENT dept (deptno, dname, loc) >
+<!ELEMENT deptno (#PCDATA) >
+<!ELEMENT dname (#PCDATA) >
+<!ELEMENT loc (#PCDATA) >
+
+

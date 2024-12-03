@@ -96,6 +96,8 @@ public class DeptDAO {
 		}
 		return list;
 	}
+	
+	
 
 	// insert
 	public void insertOne(DeptVO vo) {
